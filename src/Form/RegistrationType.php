@@ -19,7 +19,7 @@ class RegistrationType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Le mail :',
+                'label' => 'Votre Email :',
                 'required' => true,
             ])
             ->add('password', RepeatedType::class, [
@@ -45,8 +45,10 @@ class RegistrationType extends AbstractType
                 'label' => 'Votre Adresse :',
             ])
 
+            // on a supprimé le add du "role" (car pas à l'utilisateur de définir son rôle)
+
             ->add('send', SubmitType::class, [
-                'label' => "Envoyer",
+                'label' => 'S\'inscrire',
             ])
         ;
     }

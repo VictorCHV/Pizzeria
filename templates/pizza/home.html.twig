@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Page d'Accueil {% endblock %}
+
+{% block body %}
+    <h1> PizzaShop</h1>
+    <p> Vos meilleurs pizzas à portée de click ! </p>
+
+<hr />
+    <h1>Nos pizzas</h1>
+    {% for pizza in pizzas %}
+    <div>
+        <h3> La {{pizza.name}} </h3>
+        {% if pizza.imageUrl %}
+        <p>
+            <img src="{{pizza.imageUrl}}" alt="{{pizza.name}}" />
+        </p>
+        {% endif %}
+
+        <p> Ingrédients : {{pizza.description}} </p>
+        <p> Prix : {{pizza.price}} € </p>
+
+        <!--pour quand on aura le panier -->
+    <a href=""> Ajouter au panier <a>
+
+    </div>
+
+    {% endfor %}
+
+
+{% endblock %}  

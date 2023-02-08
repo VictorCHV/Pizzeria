@@ -41,7 +41,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(nullable: true)]
     private ?\DateTime $createdAt = null;
 
-    #[Timestampable(on: 'create')]
+    #[Timestampable(on: 'update')]
     #[ORM\Column(nullable: true)]
     private ?\DateTime $updatedAt = null;
 
