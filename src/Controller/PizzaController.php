@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PizzaController extends AbstractController
 {
     /**
-     * @Route("/home" , name="app_pizza_home")
+     * @Route("/" , name="app_pizza_home")
      */
 
     public function home(PizzaRepository $repository): Response

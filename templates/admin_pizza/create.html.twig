@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+
+    <div class="container mg-top">
+    <h1> Nouvelle Pizza </h1>
+
+    {{ form_start(form) }}
+
+    {{ form_rest(form) }}
+    
+    <div>
+        <button type="Submit" class="btn">
+        <!-- ligne icone ci-dessous à remettre plus tard -->
+        <!--    <i class="fa-solid fa-paper-plane"></i> --> 
+            Envoyer
+        </button>
+
+    </div>
+
+    {{ form_end(form) }}
+    </div>
+
+{% endblock %}

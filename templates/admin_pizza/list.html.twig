@@ -1,17 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block body %}  
 
-    <div class="hero-unit">
-        <div class="hero-bg-image">
-            <img src="images/pizzeria_hero.png"/>
-            <div class="hero-bg-image-frame"></div>
-        </div>
-        <h1> Pizza Shop </h1>
-        <p class= "hero-subtitle"> Vos meilleures pizzas à portée de click </p>
-    </div>
-
-
+   <a class="btn" href="{{ path('app_admin_pizza_create') }}">
+        <i class="fa-solid fa-pizza-slice"></i>
+        <span>Ajouter une pizza </span>
+    </a> 
+    
+    
     <div class="container"> 
         <h1> Nos pizzas </h1>
         {% for pizza in pizzas %}
@@ -32,9 +28,16 @@
                 <div class="price">
                     <p>Prix: {{ pizza.price }} €</p>
                 </div>
-                <a class="btn" href="{{ path('app_basket_addArticle', {id: pizza.id})}}">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span>Ajouter au panier </span>
+                <a class="btn" href="{{ path('app_admin_pizza_delete', {id: pizza.id}) }}">
+                <!--  ligne pour l'icône ci-dessous à remettre plus tard -->
+                <!-- <i class="fa-solid fa-trash"></i> -->
+                    <span>Supprimer </span>
+                </a>
+
+
+                <a class="btn" href="{{ path('app_admin_pizza_update', {id: pizza.id}) }}">
+                   <i class="fa-solid fa-pencil"></i>
+                    <span>Modifier </span>
                 </a>
             </div>
         </div>
@@ -42,4 +45,6 @@
 
         {% endfor %}
     </div>  
+
+
 {% endblock %}
