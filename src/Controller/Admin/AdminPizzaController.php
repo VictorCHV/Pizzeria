@@ -105,7 +105,7 @@ class AdminPizzaController extends AbstractController
          $formView= $form->createView();
 
          //affichage dans le template
-         return $this->render('admin/pizza/update.html.twig', [
+         return $this->render('admin_pizza/update.html.twig', [
              'form' => $formView,
              'pizza' => $pizza,
          ]);
