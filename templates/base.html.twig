@@ -33,13 +33,16 @@
             {% endif %}
         </div>
 
-        <!-- Pour avoir Icones Panier... voir Code Github Imane (PROJET-6-10) -->
+        <div class="header-right">
+        <!-- Pour avoir Icones Panier, Profil, Déconnecter... voir Code Github Imane (PROJET-6-10) -->
             {% if app.user %}
                 <nav>
+
                     <!-- pas besoin ligne lien Accueil ci-dessous car on a icône Maison (fa-solid fa-house) -->
                     <!-- <a  href="{{ path('app_pizza_home') }}"> Accueil</a> -->
                     <a href="{{ path('app_basket_display') }}"> Panier </a>
                     <a href="{{ path('app_logout') }}"> Se déconnecter </a>
+                    <a href="{{path ('app_user_myProfile') }}"> Mon Profil </a>
                 </nav>
             {% else %} 
                 <nav>
@@ -47,7 +50,10 @@
                     <a  href="{{ path('app_login') }}"> Se connecter</a>
                 </nav>
             {% endif %}
-        </nav>
+
+                </nav>
+
+        </div>
         </header>
 
         {% block body %}{% endblock %}

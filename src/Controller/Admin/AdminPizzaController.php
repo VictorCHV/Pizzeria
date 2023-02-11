@@ -19,6 +19,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminPizzaController extends AbstractController
 {
     /**
+     * @Route("/admin", name="app_admin_home")
+     */
+    public function home(Request $request, PizzaRepository $repository): Response
+    {
+        return $this->render('admin_pizza/home.html.twig');
+    }
+
+    /**
      * @Route("/admin/pizza/nouvelle", name="app_admin_pizza_create")
      */
     public function create(Request $request, PizzaRepository $repository): Response
